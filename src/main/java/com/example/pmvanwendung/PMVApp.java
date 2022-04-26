@@ -9,12 +9,14 @@ import java.sql.*;
 import java.io.IOException;
 
 public class PMVApp extends Application {
+
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(PMVApp.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Music School Management App");
+        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
+        stage.setTitle("Music School Management");
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
 
         //SQLITE

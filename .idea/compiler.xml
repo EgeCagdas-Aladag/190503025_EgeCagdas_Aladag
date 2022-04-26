@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="PMVAnwendung" target="18" />
+      <module name="PMVAnwendung" target="16" />
     </bytecodeTargetLevel>
   </component>
 </project>
