@@ -7,7 +7,7 @@ public class Course {
     private int courseId;
     private int price;
     private ArrayList<String> requiredInstruments;
-    private ArrayList<int> sessions;
+    private ArrayList<Integer> sessions;
 
     //GET-SETS
     public int getCourseId() {
@@ -34,11 +34,11 @@ public class Course {
         this.requiredInstruments = requiredInstruments;
     }
 
-    public ArrayList<int> getSessions() {
+    public ArrayList<Integer> getSessions() {
         return sessions;
     }
 
-    public void setSessions(ArrayList<int> sessions) {
+    public void setSessions(ArrayList<Integer> sessions) {
         this.sessions = sessions;
     }
 

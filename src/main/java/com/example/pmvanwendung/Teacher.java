@@ -5,7 +5,7 @@ import java.util.*;
 public class Teacher extends Person {
     private int teacherId;
     private LocalDate workStart;
-    private ArrayList<int> offeredCourses;
+    private ArrayList<Integer> offeredCourses;
     private List<String> instruments;
     private String infoText;
     private boolean isAdmin;
@@ -26,11 +26,11 @@ public class Teacher extends Person {
         this.workStart = workStart;
     }
 
-    public ArrayList<int> getOfferedCourses() {
+    public ArrayList<Integer> getOfferedCourses() {
         return offeredCourses;
     }
 
-    public void setOfferedCourses(ArrayList<int> offeredCourses) {
+    public void setOfferedCourses(ArrayList<Integer> offeredCourses) {
         this.offeredCourses = offeredCourses;
     }
 
