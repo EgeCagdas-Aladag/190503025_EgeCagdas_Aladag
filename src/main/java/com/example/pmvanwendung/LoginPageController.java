@@ -8,13 +8,21 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.scene.effect.Bloom;
 import javafx.scene.effect.Glow;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class PMVAppController {
+public class LoginPageController {
+
+    @FXML
+    TextField usernameField;
+
+    @FXML
+    PasswordField passwordField;
 
     @FXML
     Button loginButton;
@@ -35,11 +43,16 @@ public class PMVAppController {
 
     @FXML
     public void loginButtonClicked(){
+        String username = usernameField.getText();
+        String password = passwordField.getText();
+
         try {
-            switchToHomepage();
+            if (Database.checkLogin(username,password)){
+                switchToDashboard();
+            }
         }
-        catch (IOException e){
-            System.out.println(e.getMessage());
+        catch (Exception e){
+            System.out.println("Exception caught:" + e.getMessage());
         }
     }
 
@@ -48,7 +61,7 @@ public class PMVAppController {
     private Scene scene;
     private Parent root;
 
-    public void switchToHomepage() throws IOException {
+    public void switchToDashboard() throws IOException {
         root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         stage =(Stage)(loginButton.getScene().getWindow());
         stage.setTitle("Dashboard");
