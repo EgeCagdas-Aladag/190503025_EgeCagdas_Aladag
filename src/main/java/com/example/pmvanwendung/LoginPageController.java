@@ -48,6 +48,7 @@ public class LoginPageController {
 
         try {
             if (Database.checkLogin(username,password)){
+                DashboardController.currentUser = username;
                 switchToDashboard();
             }
         }
@@ -72,7 +73,7 @@ public class LoginPageController {
     }
 
     public void switchToLoginPage() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+        root = FXMLLoader.load(getClass().getResource("loginpageloginpage.fxml"));
         stage =(Stage)(loginButton.getScene().getWindow());
         stage.setTitle("Login");
         stage.setResizable(false);

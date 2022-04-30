@@ -29,11 +29,15 @@ public class Database {
     }
 
     public static boolean checkLogin(String username, String password){
-        String query = "SELECT username, password FROM users"
-                + " WHERE username = " + "'" + username + "'" + " AND password = " + "'" +  password + "'" + ";";
+        String query = "SELECT username, password FROM users WHERE username = ? AND password = ?;";
 
         try{
-            resultSet = statement.executeQuery(query);
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setString(1,username);
+            preparedStatement.setString(2,password);
+
+
+            resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()){
                 System.out.println("Login validated!");
