@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="100.0" prefWidth="1070.0" style="-fx-background-color: #C70039;" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pmvanwendung.Toolbar">
+   <children>
+      <Label fx:id="usernameLabel" layoutX="909.0" layoutY="32.0" text="N/A" textFill="WHITE">
+         <font>
+            <Font size="25.0" />
+         </font>
+      </Label>
+      <ImageView fx:id="userImage" fitHeight="50.0" fitWidth="50.0" layoutX="842.0" layoutY="25.0" onMouseClicked="#userImageClicked" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@userdefault.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+   </children>
+</AnchorPane>

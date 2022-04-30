@@ -48,7 +48,7 @@ public class LoginPageController {
 
         try {
             if (Database.checkLogin(username,password)){
-                DashboardController.currentUser = username;
+                DashboardController.setCurrentUser(username);
                 switchToDashboard();
             }
         }
@@ -69,6 +69,7 @@ public class LoginPageController {
         //stage.setResizable(false); TODO: Decide if you want it resizable
         scene = new Scene(root);
         stage.setScene(scene);
+        stage.centerOnScreen();
         stage.show();
     }
 

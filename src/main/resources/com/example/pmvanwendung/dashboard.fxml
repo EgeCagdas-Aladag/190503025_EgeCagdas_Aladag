@@ -42,6 +42,7 @@
             </Button>
          </children>
       </VBox>
-      <Pane fx:id="pane" layoutX="130.0" prefHeight="800.0" prefWidth="1070.0" />
+      <Pane fx:id="pane" layoutX="130.0" layoutY="100.0" prefHeight="700.0" prefWidth="1070.0" />
+      <Pane fx:id="toolbarPane" layoutX="130.0" prefHeight="100.0" prefWidth="1070.0" />
    </children>
 </AnchorPane>
