@@ -3,6 +3,7 @@ package com.example.pmvanwendung;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 
+import javafx.scene.Parent;
 import javafx.scene.control.Button;
 import javafx.scene.layout.Pane;
 
@@ -22,11 +23,8 @@ public class DashboardController {
     @FXML
     private void initialize(){
         loadToolbar();
-        loadHomepage();
+        loadPage("homepage");
     }
-
-    @FXML
-    Button homeButton;
 
     @FXML
     Pane pane;
@@ -35,15 +33,44 @@ public class DashboardController {
     Pane toolbarPane;
 
     @FXML
+    Button homeButton;
+
+    @FXML
+    Button classesButton;
+
+    @FXML
+    Button studentsButton;
+
+    @FXML
+    Button sessionsButton;
+
+
+
+    @FXML
     public void homeButtonClicked() {
-        loadHomepage();
+        loadPage("homepage");
+    }
+
+    @FXML
+    public void classesButtonClicked(){
+        loadPage("classespage");
+    }
+
+    @FXML
+    public void studentsButtonClicked(){
+        loadPage("students");
+    }
+
+    @FXML
+    public void sessionsButtonClicked(){
+        loadPage("sessions");
     }
 
     private void loadToolbar(){
         try {
-            Pane newPane = FXMLLoader.load(getClass().getResource("toolbar.fxml"));
-            toolbarPane.getChildren().removeAll();
-            toolbarPane.getChildren().add(newPane);
+            Parent newParent = FXMLLoader.load(getClass().getResource("toolbar.fxml"));
+            toolbarPane.getChildren().clear();
+            toolbarPane.getChildren().add(newParent);
         }
         catch (Exception e){
             System.out.println(e.getMessage());
@@ -51,11 +78,12 @@ public class DashboardController {
     }
 
 
-    private void loadHomepage(){
+    private void loadPage(String fxmlName){
+        Parent root = null;
         try {
-            Pane newPane = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-            pane.getChildren().removeAll();
-            pane.getChildren().add(newPane);
+            root = FXMLLoader.load(getClass().getResource(fxmlName + ".fxml"));
+            pane.getChildren().clear();
+            pane.getChildren().add(root);
         }
         catch (Exception e){
             System.out.println(e.getMessage());

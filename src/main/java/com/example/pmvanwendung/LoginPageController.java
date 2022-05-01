@@ -1,5 +1,6 @@
 package com.example.pmvanwendung;
 
+import javafx.animation.FadeTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -13,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.effect.Bloom;
 import javafx.scene.effect.Glow;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 import java.io.IOException;
 
@@ -26,6 +28,24 @@ public class LoginPageController {
 
     @FXML
     Button loginButton;
+
+    @FXML
+    Label alertLabel;
+
+    private FadeTransition fadeTransition = new FadeTransition(Duration.millis(3000));
+
+    @FXML
+    public void initialize(){
+        setupFadeTransiiton();
+    }
+
+    private void setupFadeTransiiton(){
+        fadeTransition.setNode(alertLabel);
+        fadeTransition.setFromValue(1.0);
+        fadeTransition.setToValue(0.0);
+        fadeTransition.setCycleCount(1);
+        fadeTransition.setAutoReverse(false);
+    }
 
     @FXML
     public void loginButtonHoverStart(){
@@ -51,6 +71,13 @@ public class LoginPageController {
                 DashboardController.setCurrentUser(username);
                 switchToDashboard();
             }
+            else {
+                alertLabel.setVisible(true);
+                System.out.println("Login failed.");
+                fadeTransition.play();
+
+            }
+
         }
         catch (Exception e){
             System.out.println("Exception caught:" + e.getMessage());

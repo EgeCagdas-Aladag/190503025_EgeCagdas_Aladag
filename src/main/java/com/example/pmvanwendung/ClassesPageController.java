@@ -1,5 +1,6 @@
 package com.example.pmvanwendung;
 
-public class HomepageController {
+public class ClassesPageController {
+
 
 }

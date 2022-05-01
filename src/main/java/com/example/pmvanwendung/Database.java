@@ -19,12 +19,12 @@ public class Database {
         try {
             connection = DriverManager.getConnection(dbPrefix + location);
             statement = connection.createStatement();
+            System.out.println("Connected to SQLite database.");
         }
         catch(Exception e) {
             System.out.println(e.getMessage());
             return null;
         }
-        System.out.println("Connected to SQLite database.");
         return connection;
     }
 
@@ -50,6 +50,30 @@ public class Database {
         }
 
         return false;
+    }
+
+
+    //TODO: Change below function from username & password to name & surname after Database changes
+    public static Person getUser(int id){
+        String query = "SELECT username, password FROM users WHERE userId = ?";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            preparedStatement.setInt(1,id);
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()){
+                String username = resultSet.getString("username");
+                String password = resultSet.getString("password");
+                Person person = new Person(username, password);
+                //break; //this will be removed
+                return person;
+            }
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+        return null;
     }
 
 }

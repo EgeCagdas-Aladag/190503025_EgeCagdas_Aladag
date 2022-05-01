@@ -8,6 +8,14 @@ public class Student extends Person{
     private ArrayList<Integer> registeredCourses;
     private int totalFees;
 
+    //CONSTRUCTORS
+
+    public Student(String name, String surname) {
+        super(name, surname);
+    }
+
+    //FUNCS
+
     public int getStudentId() {
         return studentId;
     }

@@ -15,27 +15,27 @@
                   <Insets left="22.0" top="45.0" />
                </VBox.margin>
             </Button>
-            <Button layoutX="10.0" layoutY="50.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="85.0" text="2">
+            <Button fx:id="classesButton" layoutX="10.0" layoutY="50.0" mnemonicParsing="false" onAction="#classesButtonClicked" prefHeight="80.0" prefWidth="85.0" text="Classes">
                <VBox.margin>
                   <Insets left="22.0" top="45.0" />
                </VBox.margin>
             </Button>
-            <Button layoutX="10.0" layoutY="170.0" mnemonicParsing="false" prefHeight="80.0" prefWidth="85.0" text="3">
+            <Button fx:id="studentsButton" layoutX="10.0" layoutY="170.0" mnemonicParsing="false" onAction="#studentsButtonClicked" prefHeight="80.0" prefWidth="85.0" text="Students">
                <VBox.margin>
                   <Insets left="22.0" top="45.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="85.0" text="4">
+            <Button fx:id="sessionsButton" mnemonicParsing="false" onAction="#sessionsButtonClicked" prefHeight="80.0" prefWidth="85.0" text="Sessions">
                <VBox.margin>
                   <Insets left="22.0" top="45.0" />
                </VBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="85.0" text="5">
+            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="85.0" text="?">
                <VBox.margin>
                   <Insets left="22.0" top="45.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="profileButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="85.0" text="Profile">
+            <Button fx:id="profileButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="85.0" text="?">
                <VBox.margin>
                   <Insets left="22.0" top="45.0" />
                </VBox.margin>
