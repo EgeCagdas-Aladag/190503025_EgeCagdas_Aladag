@@ -78,12 +78,18 @@ public class DashboardController {
     }
 
 
-    private void loadPage(String fxmlName){
+    public void loadPage(String fxmlName){
         Parent root = null;
         try {
+            if (fxmlName.equals("students")){           //TODO Maybe a switch case here.
+                StudentsPageController.setDashboardController(this);
+            }
+
             root = FXMLLoader.load(getClass().getResource(fxmlName + ".fxml"));
             pane.getChildren().clear();
             pane.getChildren().add(root);
+
+
         }
         catch (Exception e){
             System.out.println(e.getMessage());

@@ -36,10 +36,10 @@ public class LoginPageController {
 
     @FXML
     public void initialize(){
-        setupFadeTransiiton();
+        setupFadeTransition();
     }
 
-    private void setupFadeTransiiton(){
+    private void setupFadeTransition(){
         fadeTransition.setNode(alertLabel);
         fadeTransition.setFromValue(1.0);
         fadeTransition.setToValue(0.0);

@@ -12,7 +12,7 @@
    <children>
       <HBox layoutY="636.0" prefHeight="40.0" prefWidth="1070.0">
          <children>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: white;" text="View" textAlignment="CENTER">
+            <Button fx:id="viewButton" mnemonicParsing="false" onAction="#viewButtonClicked" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: white;" text="View" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
@@ -20,12 +20,12 @@
                   <Insets left="650.0" right="30.0" />
                </HBox.margin>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: white;" text="Add" textAlignment="CENTER">
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: white;" text="New" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
             </Button>
-            <Button mnemonicParsing="false" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: white;" text="Remove" textAlignment="CENTER">
+            <Button fx:id="removeButton" mnemonicParsing="false" onAction="#removeButtonClicked" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: white;" text="Remove" textAlignment="CENTER">
                <font>
                   <Font size="20.0" />
                </font>
@@ -37,8 +37,8 @@
       </HBox>
       <TableView fx:id="studentsTableView" layoutX="15.0" layoutY="14.0" prefHeight="610.0" prefWidth="1040.0">
         <columns>
-          <TableColumn prefWidth="75.0" text="C1" />
-          <TableColumn prefWidth="75.0" text="C2" />
+          <TableColumn fx:id="nameColumn" prefWidth="206.0" text="Name" />
+          <TableColumn fx:id="surnameColumn" minWidth="7.0" prefWidth="315.0" text="Surname" />
         </columns>
       </TableView>
    </children>

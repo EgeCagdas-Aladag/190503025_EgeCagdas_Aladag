@@ -13,12 +13,13 @@ public class Student extends Person{
     public Student(String name, String surname) {
         super(name, surname);
     }
-
-    //FUNCS
-
-    public int getStudentId() {
-        return studentId;
+    public Student(int studentId, String name, String surname){
+        this.studentId = studentId;
+        this.name = name;
+        this.surname = surname;
     }
+
+    //GET&SET
 
     public void setStudentId(int studentId) {
         this.studentId = studentId;

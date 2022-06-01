@@ -3,18 +3,46 @@ package com.example.pmvanwendung;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.stage.Stage;
 
 public class StudentsPageController {
+
+    AddStudentPopupController addStudentPopupController;
+
     @FXML
     private TableView studentsTableView;
 
-    private ObservableList<Person> studentsList = FXCollections.observableArrayList();
+    @FXML
+    private TableColumn nameColumn;
 
-    private void studentsTableViewSetUp(){
-        Person person = Database.getUser(1);
-        studentsList.add(person);
+    @FXML
+    private TableColumn surnameColumn;
+
+    private ObservableList<Student> studentsList = FXCollections.observableArrayList();
+
+    private static DashboardController dashboardController;
+
+    public static DashboardController getDashboardController() {
+        return dashboardController;
+    }
+
+    public static void setDashboardController(DashboardController dashboardController) {
+        StudentsPageController.dashboardController = dashboardController;
+    }
+
+    public void studentsTableViewSetUp(){
+        studentsList = Database.getStudentsList();
+        nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
+        surnameColumn.setCellValueFactory(new PropertyValueFactory<>("surname"));
+
+        studentsTableView.setItems(studentsList);
 
 
     }
@@ -22,7 +50,44 @@ public class StudentsPageController {
     @FXML
     private void initialize(){
         studentsTableViewSetUp();
-        studentsTableView.setItems(studentsList);
+        studentsTableView.refresh();
+    }
+
+    @FXML
+    private void addButtonClicked(){
+        try {
+            Parent root = FXMLLoader.load(getClass().getResource("addstudentpopup.fxml"));
+            Scene scene = new Scene(root);
+
+            Stage stage = new Stage();
+            stage.setResizable(false);
+            stage.setTitle("New Student");
+            stage.setAlwaysOnTop(true);
+            stage.setScene(scene);
+            stage.show();
+
+            AddStudentPopupController.studentsPageController = this;
+
+        }
+        catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+    }
+
+    @FXML
+    private void viewButtonClicked(){
+        Student studentToBeViewed = (Student) studentsTableView.getSelectionModel().getSelectedItem();
+        StudentProfilePageController.viewedStudent = studentToBeViewed;
+
+        dashboardController.loadPage("StudentProfilePage");
+    }
+
+
+    @FXML
+    private void removeButtonClicked(){
+        Student studentToBeRemoved = (Student) studentsTableView.getSelectionModel().getSelectedItem();
+        Database.removeStudent(studentToBeRemoved.getName(), studentToBeRemoved.getSurname());
+        studentsTableViewSetUp();
         studentsTableView.refresh();
     }
 
