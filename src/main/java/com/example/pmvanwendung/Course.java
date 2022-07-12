@@ -69,6 +69,12 @@ public class Course {
     }
 
     //OTHER FUNCTIONS
+
+    @Override
+    public String toString(){
+        return this.getCourseName();
+    }
+
     public void addInstrument(String instrument){
         instrument = instrument.toLowerCase();
 

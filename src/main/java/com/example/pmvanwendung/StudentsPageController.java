@@ -16,6 +16,8 @@ public class StudentsPageController {
 
     AddStudentPopupController addStudentPopupController;
 
+    //"1,2,3" split(',') 1 2 3 parseInt
+
     @FXML
     private TableView studentsTableView;
 
@@ -24,6 +26,9 @@ public class StudentsPageController {
 
     @FXML
     private TableColumn surnameColumn;
+
+    @FXML
+    private TableColumn registeredCoursesColumn;
 
     private ObservableList<Student> studentsList = FXCollections.observableArrayList();
 
@@ -41,6 +46,7 @@ public class StudentsPageController {
         studentsList = Database.getStudentsList();
         nameColumn.setCellValueFactory(new PropertyValueFactory<>("name"));
         surnameColumn.setCellValueFactory(new PropertyValueFactory<>("surname"));
+        registeredCoursesColumn.setCellValueFactory(new PropertyValueFactory<>("registeredCoursesStringParsed"));
 
         studentsTableView.setItems(studentsList);
 
@@ -50,7 +56,7 @@ public class StudentsPageController {
     @FXML
     private void initialize(){
         studentsTableViewSetUp();
-        studentsTableView.refresh();
+        //studentsTableView.refresh(); //Gereksiz
     }
 
     @FXML
@@ -86,7 +92,7 @@ public class StudentsPageController {
     @FXML
     private void removeButtonClicked(){
         Student studentToBeRemoved = (Student) studentsTableView.getSelectionModel().getSelectedItem();
-        Database.removeStudent(studentToBeRemoved.getName(), studentToBeRemoved.getSurname());
+        Database.removeStudent(studentToBeRemoved);
         studentsTableViewSetUp();
         studentsTableView.refresh();
     }

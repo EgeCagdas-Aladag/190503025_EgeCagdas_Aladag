@@ -25,17 +25,7 @@
                   <Insets left="22.0" top="45.0" />
                </VBox.margin>
             </Button>
-            <Button fx:id="sessionsButton" mnemonicParsing="false" onAction="#sessionsButtonClicked" prefHeight="80.0" prefWidth="85.0" text="Sessions">
-               <VBox.margin>
-                  <Insets left="22.0" top="45.0" />
-               </VBox.margin>
-            </Button>
-            <Button mnemonicParsing="false" prefHeight="80.0" prefWidth="85.0" text="?">
-               <VBox.margin>
-                  <Insets left="22.0" top="45.0" />
-               </VBox.margin>
-            </Button>
-            <Button fx:id="profileButton" mnemonicParsing="false" prefHeight="80.0" prefWidth="85.0" text="?">
+            <Button fx:id="usersButton" mnemonicParsing="false" onAction="#usersButtonClicked" prefHeight="80.0" prefWidth="85.0" text="Users">
                <VBox.margin>
                   <Insets left="22.0" top="45.0" />
                </VBox.margin>

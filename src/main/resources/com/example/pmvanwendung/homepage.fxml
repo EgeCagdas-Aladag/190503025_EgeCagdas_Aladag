@@ -6,7 +6,7 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pmvanwendung.HomepageController">
    <children>
-      <Label layoutX="369.0" layoutY="314.0" text="&lt;HOMEPAGE&gt;">
+      <Label layoutX="384.0" layoutY="314.0" text="&lt;WELCOME&gt;">
          <font>
             <Font size="50.0" />
          </font>

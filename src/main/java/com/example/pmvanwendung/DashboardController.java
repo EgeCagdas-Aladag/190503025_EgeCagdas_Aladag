@@ -10,14 +10,14 @@ import javafx.scene.layout.Pane;
 public class DashboardController {
 
 
-    private static String currentUser;
+    private static User currentUser;
 
-    public static String getCurrentUser() {
+    public static User getCurrentUser() {
         return currentUser;
     }
 
-    public static void setCurrentUser(String currentUser) {
-        DashboardController.currentUser = currentUser;
+    public static void setCurrentUser(User _currentUser) {
+        DashboardController.currentUser = _currentUser;
     }
 
     @FXML
@@ -44,6 +44,8 @@ public class DashboardController {
     @FXML
     Button sessionsButton;
 
+    @FXML
+    Button usersButton;
 
 
     @FXML
@@ -53,7 +55,7 @@ public class DashboardController {
 
     @FXML
     public void classesButtonClicked(){
-        loadPage("classespage");
+        loadPage("classes");
     }
 
     @FXML
@@ -66,8 +68,13 @@ public class DashboardController {
         loadPage("sessions");
     }
 
+    @FXML
+    public void usersButtonClicked() { loadPage("users");}
+
     private void loadToolbar(){
         try {
+            Toolbar.currentUser = this.currentUser;
+            Toolbar.dashboardController = this;
             Parent newParent = FXMLLoader.load(getClass().getResource("toolbar.fxml"));
             toolbarPane.getChildren().clear();
             toolbarPane.getChildren().add(newParent);
@@ -80,9 +87,19 @@ public class DashboardController {
 
     public void loadPage(String fxmlName){
         Parent root = null;
+
         try {
             if (fxmlName.equals("students")){           //TODO Maybe a switch case here.
                 StudentsPageController.setDashboardController(this);
+            }
+
+            switch(fxmlName){
+                case "students":
+                    StudentsPageController.setDashboardController(this);
+                    break;
+                case "classes":
+                    ClassesPageController.setDashboardController(this);
+                    break;
             }
 
             root = FXMLLoader.load(getClass().getResource(fxmlName + ".fxml"));

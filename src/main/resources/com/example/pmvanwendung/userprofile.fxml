@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pmvanwendung.UserProfilePageController">
+   <children>
+      <Label layoutX="53.0" layoutY="32.0" prefHeight="40.0" prefWidth="88.0" text="Name:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="72.0" prefHeight="40.0" prefWidth="88.0" text="Surname:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label layoutX="53.0" layoutY="112.0" prefHeight="40.0" prefWidth="88.0" text="Username:" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Label fx:id="nameLabel" layoutX="153.0" layoutY="32.0" prefHeight="40.0" prefWidth="149.0" text="Name" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="surnameLabel" layoutX="153.0" layoutY="72.0" prefHeight="40.0" prefWidth="149.0" text="Surname:" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="usernameLabel" layoutX="153.0" layoutY="112.0" prefHeight="40.0" prefWidth="149.0" text="Username:" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
+      <Button fx:id="editButton" layoutX="53.0" layoutY="187.0" mnemonicParsing="false" onAction="#editButtonClicked" prefHeight="25.0" prefWidth="88.0" text="Edit" />
+      <TextField fx:id="nameField" layoutX="535.0" layoutY="40.0" promptText="Name" visible="false" />
+      <TextField fx:id="surnameField" layoutX="535.0" layoutY="80.0" promptText="Surname" visible="false" />
+      <TextField fx:id="usernameField" layoutX="535.0" layoutY="120.0" promptText="Username" visible="false" />
+      <Button fx:id="saveButton" layoutX="596.0" layoutY="243.0" mnemonicParsing="false" onAction="#saveButtonClicked" prefHeight="25.0" prefWidth="88.0" text="Save" visible="false" />
+      <PasswordField fx:id="passwordField" layoutX="535.0" layoutY="162.0" promptText="Password" visible="false" />
+      <PasswordField fx:id="passwordConfirmField" layoutX="535.0" layoutY="200.0" promptText="Password confirm" visible="false" />
+   </children>
+</AnchorPane>

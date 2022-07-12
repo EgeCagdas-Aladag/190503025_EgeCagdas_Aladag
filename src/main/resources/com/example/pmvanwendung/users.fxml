@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="700.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pmvanwendung.UsersPageController">
+   <children>
+      <HBox layoutY="578.0" prefHeight="40.0" prefWidth="1070.0">
+         <children>
+            <Button fx:id="editButton" mnemonicParsing="false" onAction="#editButtonClicked" prefHeight="40.0" prefWidth="110.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: white;" text="Edit" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="650.0" right="30.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="addButton" mnemonicParsing="false" onAction="#addButtonClicked" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: white;" text="New" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+            <Button fx:id="removeButton" mnemonicParsing="false" onAction="#removeButtonClicked" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: white;" text="Remove" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="30.0" right="30.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="usersTableView" layoutX="15.0" layoutY="14.0" prefHeight="340.0" prefWidth="1040.0">
+         <columns>
+            <TableColumn fx:id="userIdColumn" prefWidth="106.0" text="User ID" />
+            <TableColumn fx:id="usernameColumn" prefWidth="334.0" text="Username" />
+            <TableColumn fx:id="nameColumn" prefWidth="258.0" text="Name" />
+            <TableColumn fx:id="surnameColumn" prefWidth="341.0" text="Surname" />
+         </columns>
+      </TableView>
+      <TextField fx:id="usernameField" layoutX="571.0" layoutY="383.0" prefHeight="25.0" prefWidth="179.0" promptText="Username" />
+      <TextField fx:id="nameField" layoutX="571.0" layoutY="419.0" prefHeight="25.0" prefWidth="179.0" promptText="Name" />
+      <TextField fx:id="surnameField" layoutX="571.0" layoutY="458.0" prefHeight="25.0" prefWidth="179.0" promptText="Surname" />
+      <Label layoutX="417.0" layoutY="383.0" prefHeight="34.0" prefWidth="113.0" text="Username" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="417.0" layoutY="419.0" prefHeight="34.0" prefWidth="113.0" text="Name" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="416.0" layoutY="458.0" prefHeight="34.0" prefWidth="114.0" text="Surname" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="416.0" layoutY="502.0" prefHeight="34.0" prefWidth="114.0" text="Password" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="417.0" layoutY="536.0" prefHeight="34.0" prefWidth="129.0" text="Password (Again)" textFill="WHITE">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="passwordField" layoutX="571.0" layoutY="502.0" prefHeight="25.0" prefWidth="179.0" promptText="Password" />
+      <PasswordField fx:id="passwordConfirmField" layoutX="571.0" layoutY="541.0" prefHeight="25.0" prefWidth="179.0" promptText="Password (Again)" />
+      <Label fx:id="passwordMatchAlertLabel" layoutX="331.0" layoutY="570.0" text="Passwords do not match!" textFill="WHITE" visible="false" />
+   </children>
+</AnchorPane>

@@ -68,7 +68,7 @@ public class LoginPageController {
 
         try {
             if (Database.checkLogin(username,password)){
-                DashboardController.setCurrentUser(username);
+                DashboardController.setCurrentUser(Database.getUserByUsername(username));
                 switchToDashboard();
             }
             else {
@@ -90,6 +90,8 @@ public class LoginPageController {
     private Parent root;
 
     public void switchToDashboard() throws IOException {
+        Toolbar.loginPageController = this;
+
         root = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
         stage =(Stage)(loginButton.getScene().getWindow());
         stage.setTitle("Dashboard");
@@ -101,8 +103,8 @@ public class LoginPageController {
     }
 
     public void switchToLoginPage() throws IOException {
-        root = FXMLLoader.load(getClass().getResource("loginpageloginpage.fxml"));
-        stage =(Stage)(loginButton.getScene().getWindow());
+        root = FXMLLoader.load(getClass().getResource("loginpage.fxml"));
+        //stage =(Stage) Toolbar.stage;
         stage.setTitle("Login");
         stage.setResizable(false);
         scene = new Scene(root);

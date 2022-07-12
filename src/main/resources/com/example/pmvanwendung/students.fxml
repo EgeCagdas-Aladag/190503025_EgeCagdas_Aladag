@@ -39,6 +39,7 @@
         <columns>
           <TableColumn fx:id="nameColumn" prefWidth="206.0" text="Name" />
           <TableColumn fx:id="surnameColumn" minWidth="7.0" prefWidth="315.0" text="Surname" />
+            <TableColumn fx:id="registeredCoursesColumn" prefWidth="518.0" text="Registered Courses" />
         </columns>
       </TableView>
    </children>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="700.0" prefWidth="1070.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.pmvanwendung.CoursePageController">
+   <children>
+      <Label layoutX="52.0" layoutY="64.0" text="Viewing:" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <Label fx:id="courseNameLabel" layoutX="192.0" layoutY="64.0" text="Label" textFill="WHITE">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Label>
+      <TableView fx:id="registeredStudentsTableView" layoutX="46.0" layoutY="126.0" prefHeight="430.0" prefWidth="969.0">
+        <columns>
+          <TableColumn fx:id="studentsNameColumn" prefWidth="492.0" text="Name" />
+            <TableColumn fx:id="studentsSurnameColumn" prefWidth="512.0" text="Surname" />
+        </columns>
+      </TableView>
+      <Button fx:id="addStudentButton" layoutX="813.0" layoutY="619.0" mnemonicParsing="false" onAction="#addStudentButtonClicked" prefHeight="41.0" prefWidth="202.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: white;" text="New Student" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="nameField" layoutX="592.0" layoutY="577.0" prefHeight="25.0" prefWidth="202.0" promptText="Name" />
+      <TextField fx:id="surnameField" layoutX="819.0" layoutY="577.0" prefHeight="25.0" prefWidth="196.0" promptText="Surname" />
+      <Button fx:id="removeStudentButton" layoutX="46.0" layoutY="582.0" mnemonicParsing="false" onAction="#removeStudentButtonClicked" prefHeight="41.0" prefWidth="253.0" style="-fx-background-color: lightgrey; -fx-border-width: 3px; -fx-border-color: white;" text="Remove selected student" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
