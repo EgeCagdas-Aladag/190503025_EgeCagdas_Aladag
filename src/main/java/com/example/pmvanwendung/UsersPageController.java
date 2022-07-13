@@ -103,4 +103,15 @@ public class UsersPageController {
         usersTableViewSetup();
     }
 
+    @FXML
+    private void usersTableClicked(){
+        if (usersTableView.getSelectionModel().getSelectedItem() != null){
+            User selectedUser = (User) usersTableView.getSelectionModel().getSelectedItem();
+
+            usernameField.setText(selectedUser.getUsername());
+            nameField.setText(selectedUser.getName());
+            surnameField.setText(selectedUser.getSurname());
+        }
+    }
+
 }
